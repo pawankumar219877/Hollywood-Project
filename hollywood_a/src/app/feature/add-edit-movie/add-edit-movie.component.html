@@ -1,0 +1,38 @@
+<div>
+  <h2> <span *ngIf="id.valueOf()==0">Add </span> <span *ngIf="id.valueOf()>0">Edit </span> Movie</h2>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <form class="form" [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title" class="form-level">Title:</label>
+      <input id="title" formControlName="title" class="input_fit"
+        [ngClass]="{'is-invalid': formControl['title'].invalid && formControl['title'].touched}">
+      <div *ngIf="formControl['title'].invalid && formControl['title'].touched" class="invalid-feedback">
+        Please provide a valid title.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="director" class="form-level">Director:</label>
+      <input id="director" class="form-control" formControlName="directorName" class="input_fit"
+        [ngClass]="{'is-invalid': formControl['directorName'].invalid && formControl['directorName'].touched}">
+      <div *ngIf="formControl['directorName'].invalid && formControl['directorName'].touched" class="invalid-feedback">
+        Please provide a valid name.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="releaseDate" class="form-level">Release Date:</label>
+      <input type="date" id="releaseDate" [(ngModel)]="this.formControl['releasedAt'].value"
+        (ngModelChange)="formatDate(this.formControl['releasedAt'])" class="form-control" formControlName="releasedAt"
+        class="input_fit"
+        [ngClass]="{'is-invalid': formControl['releasedAt'].invalid && formControl['releasedAt'].touched}">
+      <div class="displayDate"> <span *ngIf="displayDate">{{ displayDate }}</span>
+        <div *ngIf="!displayDate"> MMM d, YYYY </div>
+      </div>
+      <div *ngIf="formControl['releasedAt'].invalid && formControl['releasedAt'].touched" class="invalid-feedback">
+        Please provide a valid date.
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

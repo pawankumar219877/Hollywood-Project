@@ -1,0 +1,22 @@
+
+.table-head{
+  font-weight: 800;
+  background: #d0d2e2;
+  padding: 5px;
+  text-align: center;
+}
+.row {
+  border-top: 1px solid #a596d8;
+}
+.row.striped{ text-align: center;color: #000; padding: 1rem; background: #eff0f7;}
+
+.row.striped:nth-child(odd){
+  text-align: center; background: #edeef1;
+}
+
+.row.striped:focus,.row.striped:hover{
+  text-align: center; background: #e2e6e9;
+}
+@media (max-width: 767.98px) {row.table-head{display:none;} }
+.container {margin: 80px;}
+

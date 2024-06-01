@@ -1,0 +1,26 @@
+
+
+  <div class="row table-head">
+      <div class="col-md-4">
+         Title
+      </div>
+      <div class="col-md-4">
+          Director
+      </div>
+        <div class="col-md-4">
+         Release Date
+      </div>
+  </div>
+  <div class="row striped" *ngFor="let movie of movies">
+     <div class="col-md-4">
+          <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
+      </div>
+       <div class="col-md-4">
+        {{ movie.directorName }}
+      </div>
+     <div class="col-md-4">
+      {{ movie.releasedAt }}
+      </div>
+  </div>
+  <a [routerLink]="['/movie', 0]">Add Movie</a>
+

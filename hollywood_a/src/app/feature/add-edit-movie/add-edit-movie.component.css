@@ -1,0 +1,20 @@
+.input_fit{
+  width: 162px;
+  margin: 2px 2px 2px 3px;
+}
+.form-level{
+  width: 100px;
+}
+.invalid-feedback{
+  margin-left: 99px;
+  position: relative;
+  top: -4px;
+}
+
+.displayDate{
+  position: relative;
+  top: -27px;
+  left: 105px;
+  background-color: white;
+  width: 109px;
+}
